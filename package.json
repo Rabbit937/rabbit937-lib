@@ -1,0 +1,22 @@
+{
+  "name": "rabbit937-lib",
+  "version": "0.0.0",
+  "description": "mini ts lib",
+  "main": "index.ts",
+  "homepage": "",
+  "scripts": {
+    "build": "tsx scripts/build"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.15.1",
+    "dts-bundle-generator": "^7.2.0",
+    "fs-extra": "^11.1.0",
+    "tsx": "^3.12.4",
+    "vite": "^4.1.4",
+    "vite-plugin-banner": "^0.7.0"
+  }
+}

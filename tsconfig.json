@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ES2016",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "lib": [
+            "ESNext",
+            "DOM",
+            "DOM.Iterable"
+        ],
+        "esModuleInterop": true,
+    }
+}
