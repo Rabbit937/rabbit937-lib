@@ -3,8 +3,8 @@ import { generateDtsBundle } from 'dts-bundle-generator'
 import { resolve } from "path";
 
 export async function buildTypes({ name, rootPath }) {
-    const filePath = resolve(rootPath, `./packages/${name}/src/index.ts`)
-    const options = [
+    const filePath = resolve(rootPath, `./src/index.ts`)
+    const options = [   
         {
             filePath,
             output: {
@@ -19,7 +19,7 @@ export async function buildTypes({ name, rootPath }) {
 
     if (!Array.isArray(dtses) || !dtses.length) return;
 
-    const outDir = resolve(rootPath, `./packages/${name}/types`)
+    const outDir = resolve(rootPath, `./types`)
     !existsSync(outDir) && mkdirSync(outDir)
 
     const dts = dtses[0]

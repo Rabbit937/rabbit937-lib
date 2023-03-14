@@ -3,27 +3,24 @@ import type { UserConfig } from 'vite'
 import banner from 'vite-plugin-banner'
 import pkg from '../../package.json'
 import { BuildOptions } from './types'
-import { resolve } from 'path'
 
 const viteConfig = ({ name, rootPath, externals }: BuildOptions): UserConfig => {
-    const basePath = resolve(rootPath, `./packages/${name}`)
-    const outDir = resolve(basePath, `./lib`)
-
     const config: UserConfig = {
         build: {
-            outDir,
             lib: {
-                entry: "packages/utils/src/index.ts",
-                name: "rabbit937-lib",
+                entry: './src/index.ts',
+                name: name,
                 formats: ['es', 'cjs', 'umd'],
                 fileName: (format) => {
                     switch (format) {
-                        case 'es':
-                            return 'index.mjs'
+                        case 'umd':
+                            return 'index.min.js'
                         case 'cjs':
                             return 'index.cjs'
+                        case 'es':
+                            return 'index.mjs'
                         default:
-                            return 'index.min.js'
+                            return 'index.js'
                     }
                 }
             },

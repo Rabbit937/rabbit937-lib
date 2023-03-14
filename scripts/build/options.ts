@@ -1,15 +1,13 @@
-import { existsSync, readJsonSync } from "fs-extra";
-import { resolve } from "path";
-import { BuildOptions } from "./types";
+import { existsSync, readJsonSync } from "@withtypes/fs-extra";
 
-export function readBuildConfig({ rootPath, name }: BuildOptions) {
-    const buildConfigFile = resolve(rootPath, `./packages/${name}/build.json`)
+import { resolve } from 'path'
 
+export function readBuildConfig(rootPath: string, name: string) {
+    const buildConfigFile = resolve(rootPath, `./packages/${name}/build.json`);
     if (existsSync(buildConfigFile)) {
         const buildConfig = readJsonSync(buildConfigFile);
         return buildConfig;
     }
 
-    return {}
-
+    return {};
 }
